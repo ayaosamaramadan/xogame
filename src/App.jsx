@@ -4,6 +4,13 @@ import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 import Player from "./components/Player";
 import Xoboard from "./components/Xoboard";
 function App() {
+
+  const [activee,isactive]=useState("X");
+
+  function handleactive() {
+    isactive((activee)=>activee==="X"?"O":"X");
+  }
+
   const [darkMode, setdarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
@@ -35,11 +42,11 @@ function App() {
         <div className="m-10 w-[80%] ">
           <div className="m-[5%] bg-gray-900 ">
             <ul className="">
-              <Player name="Player 1" sym="X" />
-              <Player name="Player 2" sym="O" />
+              <Player name="Player 1" sym="X" activee={activee==="X"}/>
+              <Player name="Player 2" sym="O" activee={activee ==='O'}/>
             </ul>
             <div className="">
-              <Xoboard />
+              <Xoboard handleactive={handleactive} activee={activee}/>
             </div>
           </div>
         </div>

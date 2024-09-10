@@ -12,3 +12,9 @@
     @apply text-2xl list-none;
   }
 }
+
+@layer components {
+  li :active {
+    @apply bg-gray-300;
+  }
+}

@@ -7,16 +7,17 @@ const initGame = [
   // ["X", "O", "X"],
   // ["O", "X", "X"],
 ];
-function Xoboard() {
+function Xoboard({handleactive,activee}) {
   const[gameBoard,setisGameboard]=useState(initGame);
 
   function handleselected( rowinx, colinx ) {
     setisGameboard((pregameBoard) => {
       const updatedBoard = [...pregameBoard.map((inrow) => [...inrow])];
-      updatedBoard[rowinx][colinx] = "X";
+      updatedBoard[rowinx][colinx] = activee;
       return updatedBoard;
 
     });
+    handleactive();
   }
 
   return (

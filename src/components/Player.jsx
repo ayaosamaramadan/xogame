@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Player({name, sym}) {
+function Player({name, sym ,activee}) {
   const [isEdit, setisEdit] = useState(false);
   const [newName, setNewName] = useState(name);
   function handleEdit() {
@@ -17,7 +17,7 @@ function Player({name, sym}) {
 
   return (
     <>
-      <li className="inline-block m-10 ">
+      <li className={`${activee?'active':undefined} inline-block m-10`} >
         <span>{playname}</span>
         <span>{sym} </span>
         <button onClick={handleEdit}> {isEdit ? "Save" : "Edit"}</button>
