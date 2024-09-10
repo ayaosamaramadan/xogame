@@ -33,7 +33,7 @@ function App() {
       </header>
       <main className="">
         <div className="m-10 w-[80%] ">
-          <div className="m-[10%]  bg-gray-900 ">
+          <div className="m-[5%] bg-gray-900 ">
             <ul className="">
               <Player name="Player 1" sym="X" />
               <Player name="Player 2" sym="O" />

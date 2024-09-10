@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const initGame = [
   [null, null, null],
   [null, null, null],
@@ -6,15 +8,26 @@ const initGame = [
   // ["O", "X", "X"],
 ];
 function Xoboard() {
+  const[gameBoard,setisGameboard]=useState(initGame);
+
+  function handleselected( rowinx, colinx ) {
+    setisGameboard((pregameBoard) => {
+      const updatedBoard = [...pregameBoard.map((inrow) => [...inrow])];
+      updatedBoard[rowinx][colinx] = "X";
+      return updatedBoard;
+
+    });
+  }
+
   return (
     <>
-      {initGame.map((row, rowIndex) => (
-        <div key={rowIndex} className="col-3 w-[50%]">
-          {row.map((sym, colIndex) => (
+      {gameBoard.map((row, rowinx) => (
+        <div key={rowinx} className="col-3 w-[50%]">
+          {row.map((sym, colinx) => (
             <>
               <div className="float-right w-[33%]">
-                <li key={colIndex} className="">
-                  <div className="bg-slate-50 text-black m-5 p-10 "><button >{sym}</button></div>
+                <li key={colinx} className="">
+                  <div className="bg-slate-50 text-black m-5 p-10 text-center" onClick={()=>handleselected(rowinx,colinx)}><button >{sym}</button></div>
                   
                 </li>
               </div>
