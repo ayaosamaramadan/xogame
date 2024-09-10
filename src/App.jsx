@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { useEffect, useState } from "react";
+import "./App.css";
+import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 function App() {
-  const [count, setCount] = useState(0)
+  const [darkMode, setdarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
+
+  function handledarkmode() {
+    setdarkMode(!darkMode);
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <header>
+        <span className="text-blue-500 ">X</span>
+        <span className="text-red-500 ">O</span>
+        <button onClick={handledarkmode}>
+          <li>
+            {darkMode ? <MdDarkMode /> : <MdOutlineDarkMode />}
+          </li>
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      </header>
+      <main className="">
+        <div className="m-10 bg-gray-900 w-[50%] ">
+          <div className="m-10 ">
+          <ul className="">
+            <li className="inline-block mr-10 ">
+              <span >Israa</span>
+              <span> X</span>
+            </li>
+            <li className="inline-block">
+              <span> Aya</span>
+              <span>  O</span>
+            </li>
+          </ul>
+          GAME BOARD
+        </div></div>
+        LOG
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
