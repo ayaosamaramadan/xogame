@@ -1,10 +1,17 @@
 import { useState } from "react";
 
-function Player({ name, sym, activee }) {
+function Player({ name, sym, activee ,setplayer2 ,setplayer1}) {
   const [isEdit, setisEdit] = useState(false);
   const [newName, setNewName] = useState(name);
   function handleEdit() {
     setisEdit((isEdit) => !isEdit);
+    if (isEdit) {
+      if (sym === "X") {
+        setplayer1(newName);
+      } else {
+        setplayer2(newName);
+      }}
+      
   }
 
   let playname = <span className="mr-10">{newName}</span>;

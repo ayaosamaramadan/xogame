@@ -6,6 +6,8 @@ import Xoboard from "./components/Xoboard";
 import Log from "./components/Log";
 
 function App() {
+  const [player1 ,setplayer1]=useState("");
+  const [player2 ,setplayer2]=useState("");
 
   const [activee,isactive]=useState("X");
 
@@ -45,15 +47,15 @@ function App() {
         <div className="m-10 w-[80%] ">
           <div className="m-[5%] bg-gray-900 ">
             <ul className="players">
-              <Player name="Player 1" sym="X" activee={activee==="X"}/>
-              <Player name="Player 2" sym="O" activee={activee ==='O'}/>
+              <Player name="Player 1" sym="X" activee={activee==="X"} setplayer1={setplayer1}/>
+              <Player name="Player 2" sym="O" activee={activee ==='O'} setplayer2={setplayer2}/>
             </ul>
             <div className="">
               <Xoboard handleactive={handleactive} activee={activee}/>
             </div>
           </div>
         </div>
-        <Log/>
+        <Log activee={activee} player1={player1} player2={player2}/>
       </main>
     </>
   );

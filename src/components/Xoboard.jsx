@@ -31,8 +31,8 @@ function Xoboard({ handleactive, activee }) {
                   
                     className={`bg-slate-50 text-black m-5 p-10 text-center ${sym !== null ? 'disabled' : ''}`}
               
-                    onClick={() => sym === null && handleselected(rowinx, colinx)}
-                    >
+                  onClick={() => sym === null && handleselected(rowinx, colinx)}
+             >
                     <button disabled={sym!==null}>{sym}</button>
                   </div>
                 </li>
