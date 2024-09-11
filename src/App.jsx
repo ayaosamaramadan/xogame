@@ -4,16 +4,14 @@ import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 import Player from "./components/Player";
 import Xoboard from "./components/Xoboard";
 import Log from "./components/Log";
+
 function App() {
-  const [gamet, setGamet] = useState([]);
 
   const [activee,isactive]=useState("X");
 
   function handleactive() {
     isactive((activee)=>activee==="X"?"O":"X");
-    setGamet((pregamet) => {
-      return [...pregamet, activee];
-    } );
+  
   }
 
   const [darkMode, setdarkMode] = useState(() => {
