@@ -3,12 +3,17 @@ import "./App.css";
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 import Player from "./components/Player";
 import Xoboard from "./components/Xoboard";
+import Log from "./components/Log";
 function App() {
+  const [gamet, setGamet] = useState([]);
 
   const [activee,isactive]=useState("X");
 
   function handleactive() {
     isactive((activee)=>activee==="X"?"O":"X");
+    setGamet((pregamet) => {
+      return [...pregamet, activee];
+    } );
   }
 
   const [darkMode, setdarkMode] = useState(() => {
@@ -41,7 +46,7 @@ function App() {
       <main className="">
         <div className="m-10 w-[80%] ">
           <div className="m-[5%] bg-gray-900 ">
-            <ul className="">
+            <ul className="players">
               <Player name="Player 1" sym="X" activee={activee==="X"}/>
               <Player name="Player 2" sym="O" activee={activee ==='O'}/>
             </ul>
@@ -50,7 +55,7 @@ function App() {
             </div>
           </div>
         </div>
-        LOG
+        <Log/>
       </main>
     </>
   );

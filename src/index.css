@@ -14,7 +14,7 @@
 }
 
 @layer components {
-  li :active {
-    @apply bg-gray-300;
+  .players li.active {
+    @apply bg-gray-300 text-black p-2;
   }
 }
