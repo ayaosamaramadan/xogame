@@ -3,19 +3,13 @@ import "./App.css";
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 import Player from "./components/Player";
 import Xoboard from "./components/Xoboard";
-import Log from "./components/Log";
+import Turnss from "./components/Turnss";
 
 function App() {
-  const [player1 ,setplayer1]=useState("");
-  const [player2 ,setplayer2]=useState("");
-
-  const [activee,isactive]=useState("X");
-
-  function handleactive() {
-    isactive((activee)=>activee==="X"?"O":"X");
-  
-  }
-
+  const [player1, setplayer1] = useState("");
+  const [player2, setplayer2] = useState("");
+  const [activee, isactive] = useState("X");
+  const [gameterns, setisgameterns] = useState([]);
   const [darkMode, setdarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
@@ -34,6 +28,28 @@ function App() {
     setdarkMode(!darkMode);
   }
 
+  function handleactive(rowinx, colinx) {
+    isactive((activee) => (activee === "X" ? "O" : "X"));
+    setisgameterns((prevTurns) => {
+      let currentTurn = "X";
+      if (prevTurns.length > 0 && prevTurns[0].player === "X") {
+        currentTurn = "O";
+      }
+
+      const updatedTurns = [
+        {
+          square: {
+            row: rowinx,
+            col: colinx,
+          },
+          player: activee,
+        },
+        ...prevTurns,
+      ];
+      return updatedTurns;
+    });
+  }
+
   return (
     <>
       <header>
@@ -47,15 +63,25 @@ function App() {
         <div className="m-10 w-[80%] ">
           <div className="m-[5%] bg-gray-900 ">
             <ul className="players">
-              <Player name="Player 1" sym="X" activee={activee==="X"} setplayer1={setplayer1}/>
-              <Player name="Player 2" sym="O" activee={activee ==='O'} setplayer2={setplayer2}/>
+              <Player
+                name="Player 1"
+                sym="X"
+                activee={activee === "X"}
+                setplayer1={setplayer1}
+              />
+              <Player
+                name="Player 2"
+                sym="O"
+                activee={activee === "O"}
+                setplayer2={setplayer2}
+              />
             </ul>
             <div className="">
-              <Xoboard handleactive={handleactive} activee={activee}/>
+              <Xoboard handleactive={handleactive} turns={gameterns}  />
             </div>
           </div>
         </div>
-        <Log activee={activee} player1={player1} player2={player2}/>
+        <Turnss activee={activee} player1={player1} player2={player2} />
       </main>
     </>
   );
