@@ -4,6 +4,7 @@ import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 import Player from "./components/Player";
 import Xoboard from "./components/Xoboard";
 import Turnss from "./components/Turnss";
+import Log from "./components/Log";
 
 function App() {
   const [player1, setplayer1] = useState("");
@@ -83,6 +84,8 @@ function App() {
         </div>
         <Turnss activee={activee} player1={player1} player2={player2} />
       </main>
+      
+      <Log turns={gameterns} />
     </>
   );
 }
