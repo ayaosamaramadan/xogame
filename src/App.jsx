@@ -6,11 +6,34 @@ import Xoboard from "./components/Xoboard";
 import Turnss from "./components/Turnss";
 import Log from "./components/Log";
 
+const initGame = [
+  [null, null, null],
+  [null, null, null],
+  [null, null, null],
+  // ["X", "O", "X"],
+  // ["O", "X", "X"],
+];
+
+const winningstat=[
+  [[0,0],[0,1],[0,2]],
+  [[1,0],[1,1],[1,2]],
+  [[2,0],[2,1],[2,2]],
+  [[0,0],[1,0],[2,0]],
+  [[0,1],[1,1],[2,1]],
+  [[0,2],[1,2],[2,2]],
+  [[0,0],[1,1],[2,2]],
+  [[0,2],[1,1],[2,0]],
+]
+
 function App() {
   const [player1, setplayer1] = useState("");
   const [player2, setplayer2] = useState("");
+
   const [activee, isactive] = useState("X");
   const [gameterns, setisgameterns] = useState([]);
+
+
+
   const [darkMode, setdarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
@@ -51,6 +74,34 @@ function App() {
     });
   }
 
+  let initGamee = initGame;
+  for (const turn of gameterns) {
+    const { square, player } = turn;
+    const { row, col } = square;
+    initGamee[row][col] = player;
+  }
+
+  // [[0,0],[0,1],[0,2]],
+  // [[1,0],[1,1],[1,2]],
+  // [[2,0],[2,1],[2,2]],
+  // [[0,0],[1,0],[2,0]],
+  // [[0,1],[1,1],[2,1]],
+  // [[0,2],[1,2],[2,2]],
+  // [[0,0],[1,1],[2,2]],
+  // [[0,2],[1,1],[2,0]],
+
+  let winner;
+  for(const win of winningstat){
+    const first=initGamee[win[0][0]][win[0][1]];
+    const second=initGamee[win[1][0]][win[1][1]];
+    const third=initGamee[win[2][0]][win[2][1]];
+    if(first && first===second && first===third){
+      
+      winner=first;
+
+  } 
+  }
+
   return (
     <>
       <header>
@@ -78,13 +129,30 @@ function App() {
               />
             </ul>
             <div className="">
-              <Xoboard handleactive={handleactive} turns={gameterns}  />
+              <Xoboard handleactive={handleactive} initGamee={initGamee}  />
             </div>
           </div>
         </div>
         <Turnss activee={activee} player1={player1} player2={player2} />
       </main>
-      
+
+      {
+        winner && (
+          <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+            <div className="bg-white p-10 rounded-lg">
+              <h1 className="text-3xl text-center text-red-500">{winner} won</h1>
+              <button
+                onClick={() => {
+                  setisgameterns([]);
+                  isactive("X");
+                }}
+              >
+                New Game
+              </button>
+            </div>
+          </div>
+        )
+      }
       <Log turns={gameterns} />
     </>
   );

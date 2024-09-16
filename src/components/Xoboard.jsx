@@ -1,33 +1,8 @@
-import { useState } from "react";
-
-const initGame = [
-  [null, null, null],
-  [null, null, null],
-  [null, null, null],
-  // ["X", "O", "X"],
-  // ["O", "X", "X"],
-];
-function Xoboard({ handleactive, turns }) {
-  let initGamee = initGame;
-  for (const turn of turns) {
-    const { square, player } = turn;
-    const { row, col } = square;
-    initGamee[row][col] = player;
-  }
-  // const [gameBoard, setisGameboard] = useState(initGame);
-
-  // function handleselected(rowinx, colinx) {
-  //   setisGameboard((pregameBoard) => {
-  //     const updatedBoard = [...pregameBoard.map((inrow) => [...inrow])];
-  //     updatedBoard[rowinx][colinx] = activee;
-  //     return updatedBoard;
-  //   });
-  //   handleactive();
-  // }
+function Xoboard({ handleactive, initGamee }) {
 
   return (
     <>
-      {initGame.map((row, rowinx) => (
+      {initGamee.map((row, rowinx) => (
         <div key={rowinx} className="col-3 w-[50%]">
           {row.map((sym, colinx) => (
             <>
