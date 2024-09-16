@@ -107,7 +107,7 @@ function handleactive(rowinx, colinx) {
 
 
 
-  let initGamee = initGame;
+  let initGamee = [...initGame.map((row) => [...row])];
   for (const turn of gameterns) {
     const { square, player } = turn;
     const { row, col } = square;
@@ -136,6 +136,9 @@ function handleactive(rowinx, colinx) {
   
   const hasDraw = gameterns.length === 9 && !winner;
   
+  function handlereset() {
+    setisgameterns([]);
+  }
 
   return (
     <>
@@ -171,7 +174,7 @@ function handleactive(rowinx, colinx) {
         <Turnss activee={activee} player1={player1} player2={player2} />
       </main>
 
-      {(winner || hasDraw) && <GameOver winner={winner} />}
+      {(winner || hasDraw) && <GameOver winner={winner} handlereset={handlereset}/>}
       <Log turns={gameterns} />
     </>
   );

@@ -1,4 +1,4 @@
-function Log({turns}) {
+function Log({turns,}) {
   return (
     
     <ol>
