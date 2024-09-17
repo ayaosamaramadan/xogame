@@ -14,7 +14,28 @@
 }
 
 @layer components {
+  .players {
+    @apply text-center ;
+  }
+  .players span{
+    @apply pr-5;
+  }
   .players li.active {
-    @apply bg-gray-300 text-black p-2;
+    @apply p-2 pl-9 pr-5 text-yellow-200 border-2 border-l-sky-500 border-b-zinc-700 bg-slate-500 rounded-full;
+  }
+  .players li {
+    @apply p-2 pl-9 pr-5 border-2 border-l-sky-500 border-b-zinc-700 bg-slate-500 rounded-full max-w-[40%];
+  }
+  .players button{
+    @apply text-white;
+  }
+  input[type="text"] {
+    @apply bg-transparent text-white w-[148px];
+  }
+  input[type="text"]:focus {
+    @apply bg-transparent;
+  }
+  .players button:hover {
+    @apply text-yellow-200;
   }
 }

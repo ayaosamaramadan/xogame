@@ -31,9 +31,10 @@ function Player({ name, sym, activee ,setplayer2 ,setplayer1}) {
   return (
     <>
       <li className={`${activee ? "active" : undefined} inline-block m-10`}>
-        <span>{playname}</span>
-        <span>{sym} </span>
-        <button onClick={handleEdit}> {isEdit ? "Save" : "Edit"}</button>
+        <div className="inline"><span>{playname}</span>
+        <span>{sym} </span></div>
+        
+        <button onClick={handleEdit} className={`${isEdit?"editbtn" : "savee"}bg-slate-400 rounded-full p-1 pl-5 pr-5`}> {isEdit ? "Save" : "Edit"}</button>
       </li>
     </>
   );
