@@ -30,5 +30,6 @@ export default {
     },
   },
   plugins: [
+    require("@designbycode/tailwindcss-text-shadow"),
   ],
 }
