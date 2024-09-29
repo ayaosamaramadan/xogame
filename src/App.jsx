@@ -135,9 +135,9 @@ function handleactive(rowinx, colinx) {
       <Headder handledarkmode={handledarkmode} darkMode={darkMode}/>
       <main className="">
         <div className="m-10 w-[80%] ">
-          <div className=" ml-[150px] bg-gray-900">
+          <div className=" ml-[150px] ">
             <Playerboard activee={activee} setplayer1={setplayer1} setplayer2={setplayer2}/>
-            <div className="ml-[200px] ">
+            <div className="ml-[10px]">
               <Xoboard handleactive={handleactive} initGamee={initGamee} />
             </div>
           </div>
