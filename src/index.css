@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply text-center justify-center dark:bg-gradient-to-r from-gray-700 to-black font-serif bg-fixed justify-center bg-300 text-aliceblue
+    @apply text-center justify-center dark:bg-gradient-to-r from-slate-950 to-slate-800 font-serif bg-fixed justify-center bg-300 text-aliceblue
     bg-sky-400;
   }
   li{
@@ -14,16 +14,16 @@
 
 @layer components {
   .players {
-    @apply text-center rounded mt-[-50px] pt-0 pb-0 ;
+    @apply text-center rounded mt-[-60px];
   }
   .players span{
     @apply pr-5 ;
   }
   .players li.active {
-    @apply p-2 pl-9 pr-5 text-yellow-200 border-2 border-l-sky-500 border-b-zinc-700 bg-slate-500 rounded-full;
+    @apply p-1.5 pl-9 shadow-pink-400 shadow-lg pr-5 text-yellow-200 border-2 border-pink-400 border-b-gray-300 rounded-full;
   }
   .players li {
-    @apply p-1 pl-9 pr-5 border-2 border-l-sky-500 border-b-zinc-700 bg-slate-500 rounded-full max-w-[40%];
+    @apply bg-violet-900 p-1 pl-9 pr-5 border-2 border-b-zinc-700  rounded-full max-w-[40%];
   }
   .players button{
     @apply text-white;
@@ -37,4 +37,26 @@
   .players button:hover {
     @apply text-yellow-200;
   }
+
+  .go li {
+
+    @apply m-10 font-bold text-[35px] shadow-2xl text-shadow-[3]
+     text-shadow-blue-500 ;
+
+  }
+  .goo{
+    @apply text-xl font-bold text-shadow-[3]
+     text-shadow-cyan-400;
+  }
+
+}
+
+@keyframes a {
+  0% {
+    @apply transform scale-90;
+  }
+  100% {
+    @apply transform scale-100;
+  }
+  
 }

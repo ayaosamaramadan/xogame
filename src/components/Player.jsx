@@ -30,7 +30,7 @@ function Player({ name, sym, activee ,setplayer2 ,setplayer1}) {
 
   return (
     <>
-      <li className={`${activee ? "active" : undefined} inline-block m-10`}>
+      <li className={`${activee ? "active" : undefined} inline-block m-10 `}>
         <div className="inline"><span>{playname}</span>
         <span>{sym} </span></div>
         

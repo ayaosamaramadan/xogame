@@ -84,7 +84,7 @@ function App() {
     setdarkMode(!darkMode);
   }
 
-function handleactive(rowinx, colinx) {
+  function handleactive(rowinx, colinx) {
     isactive((activee) => (activee === "X" ? "O" : "X"));
     setisgameterns((prevTurns) => {
       let currentTurn = "X";
@@ -123,30 +123,35 @@ function handleactive(rowinx, colinx) {
       winner = first;
     }
   }
-  
+
   const hasDraw = gameterns.length === 9 && !winner;
-  
+
   function handlereset() {
     setisgameterns([]);
   }
 
   return (
     <>
-      <Headder handledarkmode={handledarkmode} darkMode={darkMode}/>
+      <Headder handledarkmode={handledarkmode} darkMode={darkMode} />
       <main className="">
         <div className="m-10 w-[80%] ">
           <div className=" ml-[150px] ">
-            <Playerboard activee={activee} setplayer1={setplayer1} setplayer2={setplayer2}/>
-            <div className="ml-[10px]">
+            <Playerboard
+              activee={activee}
+              setplayer1={setplayer1}
+              setplayer2={setplayer2}
+            />
+            <Turnss activee={activee} player1={player1} player2={player2} />
+            <div className="ml-[270px] border-fuchsia-400 bg-violet-400 shadow-pink-500 shadow-lg rounded-3xl w-[42.1%] border-8">
               <Xoboard handleactive={handleactive} initGamee={initGamee} />
             </div>
           </div>
         </div>
-        <Turnss activee={activee} player1={player1} player2={player2} />
       </main>
 
-      {(winner || hasDraw) && <GameOver winner={winner} handlereset={handlereset}/>}
-      <Log turns={gameterns} />
+      {(winner || hasDraw) ? 
+        <GameOver winner={winner} handlereset={handlereset} />:<Log turns={gameterns}/>}
+      
     </>
   );
 }

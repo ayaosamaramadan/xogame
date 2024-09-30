@@ -3,7 +3,7 @@ import Player from "./Player"
 function Playerboard({ activee, setplayer1, setplayer2 }) {
   return (
   <>
-  <ul className="players">
+  <ul className="players ">
               <Player
                 name="Player 1"
                 sym="X"
