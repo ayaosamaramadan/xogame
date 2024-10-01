@@ -17,19 +17,19 @@
     @apply text-center rounded mt-[-60px];
   }
   .players span {
-    @apply 2xl:pr-5 xl:pr-5 lg:pr-1 md:pr-0  ;
+    @apply 2xl:pr-5 xl:pr-5 lg:pr-1 md:pr-0 sm:pr-0  ;
   }
   .players li.active {
-    @apply p-1.5 pl-9 shadow-pink-400 shadow-lg pr-5 text-yellow-200 border-2 border-pink-400 border-b-gray-300 ;
+    @apply p-1.5 2xl:pl-9 xl:pl-9 lg:pl-9 sm:px-1 shadow-pink-400 shadow-lg pr-5 text-yellow-200 border-2 border-pink-400 border-b-gray-300 ;
   }
   .players li {
-    @apply bg-violet-900 p-1 pl-9 pr-5 border-2 border-b-zinc-700;
+    @apply bg-violet-900 p-1 2xl:pl-9 xl:pl-9 lg:pl-9 sm:px-1 md:pl-9 pr-5 border-2 border-b-zinc-700;
   }
   .players button {
     @apply text-white;
   }
   input[type="text"] {
-    @apply bg-transparent text-white 2xl:w-[148px] xl:w-[148px] lg:w-[148px] md:w-[100px] md:ml-[-10px] ;
+    @apply bg-transparent text-white 2xl:w-[148px] xl:w-[148px] lg:w-[148px] md:w-[100px] md:ml-[-10px] sm:ml-[-70px] ;
   }
   input[type="text"]:focus {
     @apply bg-transparent;

@@ -134,26 +134,36 @@ function App() {
     <>
       <Headder handledarkmode={handledarkmode} darkMode={darkMode} />
       <main>
-        <div className="m-10 w-[80%] ">
-          <div className=" 2xl:ml-[150px] xl:ml-[150px] lg:ml-[120px] md:ml-[9px] ">
+        <div className="m-10 ">
+          <div className="2xl:ml-[-150px] xl:ml-[0px] lg:ml-[0px] md:ml-[0px] sm:ml-[40px] 2sm:ml-[0px]">
             <Playerboard
               activee={activee}
               setplayer1={setplayer1}
               setplayer2={setplayer2}
             />
             <Turnss activee={activee} player1={player1} player2={player2} />
-            <div className="ml-[270px] border-fuchsia-400 bg-violet-400 shadow-pink-500 shadow-lg rounded-3xl w-[42.1%] border-8">
+            <div
+              className="
+            2xl:ml-[42%] 2xl:max-w-[25%]
+            xl:ml-[34%] xl:max-w-[33%]
+            lg:ml-[29%] lg:max-w-[42%] 
+            md:ml-[5%] md:max-w-[60%] 
+             sm:ml-[-8%] sm:max-w-[73%]
+             2sm:ml-[-6%] 2sm:max-w-[79.5%] 
+             border-fuchsia-400
+             bg-violet-400 shadow-pink-500 shadow-lg rounded-3xl 
+             border-8"
+            >
               <Xoboard handleactive={handleactive} initGamee={initGamee} />
             </div>
           </div>
         </div>
+        {winner || hasDraw ? (
+          <GameOver winner={winner} handlereset={handlereset} />
+        ) : (
+          gameterns.length !== 0 && <Log turns={gameterns} />
+        )}
       </main>
-
-      {winner || hasDraw ? (
-        <GameOver winner={winner} handlereset={handlereset} />
-      ) : (
-        gameterns.length !== 0 && <Log turns={gameterns} />
-      )}
     </>
   );
 }
