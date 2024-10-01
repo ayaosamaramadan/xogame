@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Player from "./components/Player";
+
 import Xoboard from "./components/Xoboard";
 import Turnss from "./components/Turnss";
 import Log from "./components/Log";
@@ -133,9 +133,9 @@ function App() {
   return (
     <>
       <Headder handledarkmode={handledarkmode} darkMode={darkMode} />
-      <main className="">
+      <main>
         <div className="m-10 w-[80%] ">
-          <div className=" ml-[150px] ">
+          <div className=" 2xl:ml-[150px] xl:ml-[150px] lg:ml-[120px] md:ml-[9px] ">
             <Playerboard
               activee={activee}
               setplayer1={setplayer1}
@@ -149,9 +149,11 @@ function App() {
         </div>
       </main>
 
-      {(winner || hasDraw) ? 
-        <GameOver winner={winner} handlereset={handlereset} />:<Log turns={gameterns}/>}
-      
+      {winner || hasDraw ? (
+        <GameOver winner={winner} handlereset={handlereset} />
+      ) : (
+        gameterns.length !== 0 && <Log turns={gameterns} />
+      )}
     </>
   );
 }

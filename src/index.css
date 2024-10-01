@@ -4,11 +4,11 @@
 
 @layer base {
   body {
-    @apply text-center justify-center dark:bg-gradient-to-r from-slate-950 to-slate-800 font-serif bg-fixed justify-center bg-300 text-aliceblue
-    bg-sky-400;
+    @apply text-center justify-center dark:animate-[bganimation_50s_infinite] dark:bg-secondary font-serif bg-fixed justify-center bg-300 text-aliceblue
+    ;
   }
-  li{
-    @apply text-2xl list-none ;
+  li {
+    @apply text-2xl list-none;
   }
 }
 
@@ -16,20 +16,20 @@
   .players {
     @apply text-center rounded mt-[-60px];
   }
-  .players span{
-    @apply pr-5 ;
+  .players span {
+    @apply 2xl:pr-5 xl:pr-5 lg:pr-1 md:pr-0  ;
   }
   .players li.active {
-    @apply p-1.5 pl-9 shadow-pink-400 shadow-lg pr-5 text-yellow-200 border-2 border-pink-400 border-b-gray-300 rounded-full;
+    @apply p-1.5 pl-9 shadow-pink-400 shadow-lg pr-5 text-yellow-200 border-2 border-pink-400 border-b-gray-300 ;
   }
   .players li {
-    @apply bg-violet-900 p-1 pl-9 pr-5 border-2 border-b-zinc-700  rounded-full max-w-[40%];
+    @apply bg-violet-900 p-1 pl-9 pr-5 border-2 border-b-zinc-700;
   }
-  .players button{
+  .players button {
     @apply text-white;
   }
   input[type="text"] {
-    @apply bg-transparent text-white w-[148px];
+    @apply bg-transparent text-white 2xl:w-[148px] xl:w-[148px] lg:w-[148px] md:w-[100px] md:ml-[-10px] ;
   }
   input[type="text"]:focus {
     @apply bg-transparent;
@@ -39,24 +39,11 @@
   }
 
   .go li {
-
     @apply m-10 font-bold text-[35px] shadow-2xl text-shadow-[3]
-     text-shadow-blue-500 ;
-
+     text-shadow-blue-500;
   }
-  .goo{
+  .goo {
     @apply text-xl font-bold text-shadow-[3]
      text-shadow-cyan-400;
   }
-
-}
-
-@keyframes a {
-  0% {
-    @apply transform scale-90;
-  }
-  100% {
-    @apply transform scale-100;
-  }
-  
 }
