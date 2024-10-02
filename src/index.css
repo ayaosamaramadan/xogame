@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply text-center justify-center dark:animate-[bganimation_50s_infinite] dark:bg-secondary font-serif bg-fixed justify-center bg-300 text-aliceblue
+    @apply text-center dark:animate-[bganimation_50s_infinite] bg-slate-300 dark:bg-secondary font-serif bg-fixed justify-center bg-300 text-aliceblue
     ;
   }
   li {
@@ -20,10 +20,10 @@
     @apply 2xl:pr-5 xl:pr-5 lg:pr-1 md:pr-0 sm:pr-0  ;
   }
   .players li.active {
-    @apply p-1.5 2xl:pl-9 xl:pl-9 lg:pl-9 sm:px-1 shadow-pink-400 shadow-lg pr-5 text-yellow-200 border-2 border-pink-400 border-b-gray-300 ;
+    @apply p-1.5 2xl:pl-9 xl:pl-9 lg:pl-9 sm:px-1 dark:shadow-pink-400 shadow-amber-700 shadow-lg pr-5 text-yellow-200 border-2 dark:border-pink-400 dark:border-b-gray-300 border-white;
   }
   .players li {
-    @apply bg-violet-900 p-1 2xl:pl-9 xl:pl-9 lg:pl-9 sm:px-1 md:pl-9 pr-5 border-2 border-b-zinc-700;
+    @apply dark:bg-violet-900 bg-amber-500 shadow-slate-500 shadow-lg p-1 2xl:pl-9 xl:pl-9 lg:pl-9 sm:px-1 md:pl-9 pr-5 border-2 dark:border-b-zinc-700 border-white;
   }
   .players button {
     @apply text-white;
@@ -40,10 +40,10 @@
 
   .go li {
     @apply m-10 font-bold text-[35px] shadow-2xl text-shadow-[3]
-     text-shadow-blue-500;
+     dark:text-shadow-blue-500 text-shadow-amber-400;
   }
   .goo {
     @apply text-xl font-bold text-shadow-[3]
-     text-shadow-cyan-400;
+     dark:text-shadow-cyan-400 text-shadow-amber-400;
   }
 }

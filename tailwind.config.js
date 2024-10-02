@@ -28,12 +28,13 @@ export default {
       },
 
         screens: {
-          '2sm': '572px',
+          '2sm': '572px',//618x801 75%
         'sm': '656px',
         'md': '768px',
         'lg': '1024px',
         'xl': '1280px',
         '2xl': '1536px',
+
       },
     },
   },

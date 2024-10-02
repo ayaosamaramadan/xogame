@@ -1,8 +1,6 @@
 function Turnss({activee ,player1,player2}) {
   return (
-    <div className="bg-violet-900 shadow-lg shadow-indigo-500 border-2
-     rounded-2xl border-teal-400 mb-5 mt-[-2%] 
-     2xl:w-[15%] xl:w-[20%] 2xl:ml-[47%] lg:w-[25%] lg:ml-[37%] md:w-[30%] md:ml-[35%] sm:w-[35%] sm:ml-[30%] 2sm:w-[40%] 2sm:ml-[30%] xl:ml-[40%] py-2  ">
+    <div className="dark:bg-violet-900 bg-amber-500 shadow-lg dark:shadow-indigo-500 shadow-slate-500 border-2 rounded-2xl dark:border-teal-400 border-neutral-50 mb-5 mt-[-2%] 2xl:w-[15%] xl:w-[20%] 2xl:ml-[47%] lg:w-[25%] lg:ml-[37%] md:w-[30%] md:ml-[35%] sm:w-[35%] sm:ml-[30%] 2sm:w-[40%] 2sm:ml-[30%] xl:ml-[40%] py-2 ">
   {(activee==="X" && player1)?
     <li>{player1}'s turn</li>
   :(activee==="O" && player2)?
