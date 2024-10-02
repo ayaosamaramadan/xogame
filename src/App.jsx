@@ -150,7 +150,7 @@ function App() {
           </div>
         </div>
         {winner || hasDraw ? (
-          <GameOver winner={winner} handlereset={handlereset} />
+          <GameOver winner={winner} handlereset={handlereset} player1={player1} player2={player2}/>
         ) : (
           gameterns.length !== 0 && <Log turns={gameterns} />
         )}
