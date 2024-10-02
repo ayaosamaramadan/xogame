@@ -3,7 +3,7 @@ import React from "react";
 function GameOver({ winner, handlereset, player1, player2 }) {
   return (
     <div
-      className="dark:bg-indigo-950 bg-emerald-600 animate-[opa_1s] relative border-gray-50 border-l-2 border-b-2 shadow-pink-500 shadow-lg rounded-3xl mt-[-500px] 
+      className="dark:bg-indigo-950 bg-emerald-600 animate-[opa_1s] relative border-gray-50 border-l-2 border-b-2 dark:shadow-pink-500 shadow-amber-400 shadow-lg rounded-3xl mt-[-500px] 
       2sm:ml-[10%]  2sm:w-[80%] 2sm:h-[46vh] 
       sm:ml-[10%]  sm:w-[80%] sm:h-[46vh]
       2xl:ml-[30%] 2xl:w-[40%] 2xl:h-[48vh]
