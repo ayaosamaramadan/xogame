@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply text-center dark:animate-[bganimation_50s_infinite] bg-slate-300 dark:bg-secondary font-serif bg-fixed justify-center bg-300 text-aliceblue
+    @apply text-center dark:animate-[bganimation_50s_infinite] bg-slate-300 dark:bg-secondary font-serif bg-fixed justify-center bg-300 text-aliceblue font-serif
     ;
   }
   li {
