@@ -12,6 +12,8 @@
   }
 }
 
+@tailwind utilities;
+
 @layer components {
   .players {
     @apply text-center rounded mt-[-60px];
@@ -39,11 +41,23 @@
   }
 
   .go li {
-    @apply m-10 font-bold text-[35px] shadow-2xl text-shadow-[3]
-     dark:text-shadow-blue-500 text-shadow-amber-400;
+    @apply m-10 font-bold text-[35px] shadow-2xl text-shadow-3
+     dark:text-shadow-blue-500 text-shadow-red-500;
   }
   .goo {
-    @apply text-xl font-bold text-shadow-[3]
-     dark:text-shadow-cyan-400 text-shadow-amber-400;
+    @apply text-xl font-bold text-shadow-3
+     dark:text-shadow-red-500 text-shadow-red-500;
+  }
+}
+
+@layer utilities {
+  .text-shadow-3 {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  .text-shadow-red-500 {
+    text-shadow: 0 1px 3px rgba(255, 0, 0, 0.5);
+  }
+  .text-shadow-blue-500 {
+    text-shadow: 0 1px 3px rgba(0, 0, 255, 0.5);
   }
 }

@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -38,5 +39,19 @@ export default {
       },
     },
   },
-  plugins: [require("@designbycode/tailwindcss-text-shadow")],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.text-shadow-3': {
+          textShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+        },
+        '.text-shadow-red-500': {
+          textShadow: '0 1px 3px rgba(255, 0, 0, 0.5)',
+        },
+        '.text-shadow-blue-500': {
+          textShadow: '0 1px 3px rgba(0, 0, 255, 0.5)',
+        },
+      });
+    },
+  ],
 };
